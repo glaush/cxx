@@ -13,6 +13,12 @@
 *.userosscache
 *.sln.docstates
 
+# For current Visual Studio 
+*.exe
+*.cfg
+*.vcxproj.*
+# .filters file should be excluded from ignore list
+!*.vcxproj.filters
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
