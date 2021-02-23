@@ -13,6 +13,9 @@
 *.userosscache
 *.sln.docstates
 
+#Conan libs
+Conan/Libs/
+
 # For current Visual Studio 
 *.exe
 *.cfg

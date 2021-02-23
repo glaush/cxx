@@ -1,0 +1,8 @@
+[requires]
+boost/1.75.0
+
+[generators]
+visual_studio_multi
+
+[options]
+boost:without_test=True
