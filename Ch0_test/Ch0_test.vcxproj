@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(SolutionDir)\Conan\conanbuildinfo_multi.props" Condition="exists('$(SolutionDir)\Conan\conanbuildinfo_multi.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
