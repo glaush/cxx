@@ -376,3 +376,4 @@ MigrationBackup/
 FodyWeavers.xsd
 
 *.props
+Conan/*
