@@ -10,14 +10,15 @@ array4_t& vector_advance(array4_t& val)
 	return val;
 }
 
-int main() {
+int main() 
+{
 	array4_t val = { 0, 1, 2, 3 };
 
 	array4_t val_res;
 	val_res = vector_advance(val);
 	assert(val.size() == 4);
 	assert(val[0] == 1);
-	assert(sizeof(val) == sizeof(char) * array4_t::static_size());
+	assert(sizeof(val) == sizeof(char) * array4_t::static_size);
 
 	return 0;
 }
