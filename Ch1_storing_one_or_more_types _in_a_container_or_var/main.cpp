@@ -48,6 +48,8 @@ T any_cast(any& value)
 
 int main()
 {
+    std::size_t type;
+
     any any_obj(34);
 
     int new_ptr_str = any_cast<int>(any_obj);
