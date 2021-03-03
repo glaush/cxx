@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3df8fdee-865d-4337-8026-5d7ab76321c2}</ProjectGuid>
-    <RootNamespace>Ex_operaror_spaceship</RootNamespace>
+    <ProjectGuid>{8d1f32c7-6fde-4c11-b3f0-09b25e5a8920}</ProjectGuid>
+    <RootNamespace>Ch4_checking_size_at_compile_time</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
