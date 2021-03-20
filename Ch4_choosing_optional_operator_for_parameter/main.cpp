@@ -49,10 +49,6 @@ namespace detail
 template<class T>
 void inc(T& value)
 {
-    int l;
-
-    l = 10;
-
     typedef detail::plus_functor step_0_t;
 
     typedef typename boost::conditional
