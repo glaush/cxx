@@ -2,7 +2,9 @@
 #define BOOST_ASIO_DESABLE_TYPE_REQUIREMENTS
 #include <boost/asio/write.hpp>
 
-#include "Task_processor.h"
+#include "Connection_with_data.h"
+
+typedef std::unique_ptr<connection_with_data> connection_ptr;
 
 template <class T>
 struct task_wrapped_with_connection

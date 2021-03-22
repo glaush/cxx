@@ -63,4 +63,10 @@ void receive_auth_responce(connection_ptr&& sock, const boost::system::error_cod
     async_read_data(std::move(sock), &process_server_response, 2);
 }
 
-int main() { return 0; }
+int main()
+{ 
+    tasks_processor::add_listener(65001, &on_send);
+
+    tasks_processor::start();
+    return 0; 
+}
