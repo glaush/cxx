@@ -21,7 +21,7 @@ void on_send(connection_ptr&& sock, const boost::system::error_code& err)
 
 void send_auth()
 {
-    connection_ptr sock = tasks_processor::create_connection("127.0.0.1", 9000);
+    connection_ptr sock = tasks_processor::create_connection("192.168.43.226", 65001);
     sock->data          = "Hello from India))))))))\n";
     async_write_data(std::move(sock), &on_send);
 }
@@ -30,23 +30,29 @@ void process_server_response(connection_ptr&& sock, const boost::system::error_c
 {
     std::cout << "I'm a callack from Belarus.\n I love cats very much))))))\n";
 
-    if (err && err != boost::asio::error::eof)
-    {
-        std::cerr << "Client error on receive: " << err.message() << "\n";
-        assert(false);
-    }
+    //In this func you can create your own handlers of recieved data from socket
+    //Next blocks of code show you how to do this(possible): 
+    
+    //if (err && err != boost::asio::error::eof)
+    //{
+    //    std::cerr << "Client error on receive: " << err.message() << "\n";
+    //    assert(false);
+    //}
 
-    if (sock->data.size() != 2)
-    {
-        std::cerr << "Wrong bytes count\n";
-        assert(false);
-    }
+    //if (sock->data.size() != 2)
+    //{
+    //    std::cerr << "Wrong bytes count\n";
+    //    assert(false);
+    //}
 
-    if (sock->data != "OK")
+  /*  if (sock->data != "OK")
     {
         std::cerr << "Wrong response: " << sock->data << "\n";
         assert(false);
-    }
+    }*/
+
+    std::cout << sock->data << std::endl;
+  
 
     sock->shutDown();
     tasks_processor::stop();
@@ -60,13 +66,18 @@ void receive_auth_responce(connection_ptr&& sock, const boost::system::error_cod
         assert(false);
     }
 
-    async_read_data(std::move(sock), &process_server_response, 2);
+    async_read_data(std::move(sock), &process_server_response, 1024);
 }
 
 int main()
 { 
-    tasks_processor::add_listener(65001, &on_send);
+    //Func using for client-side
+    send_auth();
 
-    tasks_processor::start();
+    // Funcs using for server-side
+    /*tasks_processor::add_listener(65001, &receive_auth_responce);
+
+    tasks_processor::start();*/
+    
     return 0; 
 }

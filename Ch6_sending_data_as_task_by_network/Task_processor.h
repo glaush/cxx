@@ -59,6 +59,20 @@ private:
 
     typedef std::unique_ptr<tcp_listener> listener_ptr;
 
+      static void start_accepting_connection(listener_ptr&& listener)
+    {
+        if (!listener->acceptor_.is_open())
+        {
+            return;
+        }
+
+        listener->new_c_.reset(new connection_with_data(listener->acceptor_.get_executor()));
+
+        boost::asio::ip::tcp::socket& s = listener->new_c_->socket;
+        acceptor_t& a                   = listener->acceptor_;
+        a.async_accept(s, tasks_processor::handle_accept(std::move(listener)));
+    }
+
     struct handle_accept
     {
         listener_ptr listener;
@@ -75,21 +89,7 @@ private:
         }
     };
 
-    static void start_accepting_connection(listener_ptr&& listener)
-    {
-        if (!listener->acceptor_.is_open())
-        {
-            return;
-        }
-
-        listener->new_c_.reset(new connection_with_data(
-            listener->acceptor_.get_executor()));
-
-        boost::asio::ip::tcp::socket& s = listener->new_c_->socket;
-        acceptor_t& a                   = listener->acceptor_;
-        a.async_accept(s, tasks_processor::handle_accept(std::move(listener)));
-    }
-
+ 
 protected:
     static boost::asio::io_service& get_ios()
     {

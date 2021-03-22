@@ -29,6 +29,7 @@ public:
         };
 
         const auto task = detail::make_task_wrapped(lambda);
+
         task();
     }
 };
