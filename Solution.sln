@@ -44,6 +44,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch6_sending_data_as_task_by
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Alexandrescu_hello_world", "Features\Alexandrescu_hello_world\Alexandrescu_hello_world.vcxproj", "{942150F1-A5AE-4611-A080-105AB47714D2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Boost_compression_example", "Features\Boost_compression_example\Boost_compression_example.vcxproj", "{B246D0DC-9C91-43F7-BFE4-BD7AC66099D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -156,6 +158,14 @@ Global
 		{942150F1-A5AE-4611-A080-105AB47714D2}.Release|x64.Build.0 = Release|x64
 		{942150F1-A5AE-4611-A080-105AB47714D2}.Release|x86.ActiveCfg = Release|Win32
 		{942150F1-A5AE-4611-A080-105AB47714D2}.Release|x86.Build.0 = Release|Win32
+		{B246D0DC-9C91-43F7-BFE4-BD7AC66099D5}.Debug|x64.ActiveCfg = Debug|x64
+		{B246D0DC-9C91-43F7-BFE4-BD7AC66099D5}.Debug|x64.Build.0 = Debug|x64
+		{B246D0DC-9C91-43F7-BFE4-BD7AC66099D5}.Debug|x86.ActiveCfg = Debug|Win32
+		{B246D0DC-9C91-43F7-BFE4-BD7AC66099D5}.Debug|x86.Build.0 = Debug|Win32
+		{B246D0DC-9C91-43F7-BFE4-BD7AC66099D5}.Release|x64.ActiveCfg = Release|x64
+		{B246D0DC-9C91-43F7-BFE4-BD7AC66099D5}.Release|x64.Build.0 = Release|x64
+		{B246D0DC-9C91-43F7-BFE4-BD7AC66099D5}.Release|x86.ActiveCfg = Release|Win32
+		{B246D0DC-9C91-43F7-BFE4-BD7AC66099D5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +173,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3DF8FDEE-865D-4337-8026-5D7AB76321C2} = {8BC59C4E-655D-4462-AF88-F74E25A08BAD}
 		{942150F1-A5AE-4611-A080-105AB47714D2} = {8BC59C4E-655D-4462-AF88-F74E25A08BAD}
+		{B246D0DC-9C91-43F7-BFE4-BD7AC66099D5} = {8BC59C4E-655D-4462-AF88-F74E25A08BAD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FED3D62B-6C52-4896-8D3B-53D9C96C1C8F}
