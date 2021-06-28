@@ -1,5 +1,6 @@
 [requires]
 boost/1.72.0
+lz4/1.9.3
 
 [generators]
 visual_studio_multi
